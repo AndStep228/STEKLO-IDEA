@@ -1133,3 +1133,235 @@ body {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
     background-position: center;
 }
+
+/* ------------------------------------------- */
+
+.product__block {
+    display: flex;
+}
+
+.product__show {
+    max-width: 834px;
+}
+
+.product-slide__img {
+    width: 638px;
+    height: 638px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.product__slide__block {
+    padding: 0 98px;
+    position: relative;
+}
+
+.product__subslide__block {
+    display: flex;
+    min-width: 0;
+    max-width: 598px;
+    margin: 40px 0 0 118px;
+}
+
+.product-subslide__img {
+    width: 127px;
+    height: 127px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.product__subslide:not(:last-child) {
+    margin: 0 30px 0 0;
+}
+
+.product__slide__block .slick-arrow {
+    position: absolute;
+    top: 45%;
+    z-index: 10;
+    font-size: 0;
+    width: 58px;
+    height: 58px;
+}
+
+.product__slide__block .slick-arrow.slick-prev {
+    left: 0;
+    background: url('../img/arrow-prev-dark.svg') 0 0 no-repeat;
+}
+
+.product__slide__block .slick-arrow.slick-prev:hover {
+    background: url('../img/arrow-prev-hov-dark.svg') 0 0 no-repeat;
+    transition: all 0.3s ease-in-out;
+}
+
+.product__slide__block .slick-arrow.slick-next {
+    left: 776px;
+    background: url('../img/arrow-next-dark.svg') 0 0 no-repeat;
+}
+
+.product__slide__block .slick-arrow.slick-next:hover {
+    background: url('../img/arrow-next-hov-dark.svg') 0 0 no-repeat;
+    transition: all 0.3s ease-in-out;
+}
+
+.product__description__block {
+    margin: 0 0 0 80px;
+}
+
+.product__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product__name {
+    color: #484848;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 136.4%;
+    max-width: 482px;
+}
+
+.product__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 168px;
+    height: 66px;
+    border-radius: 15px;
+    background: #484848;
+    color: white;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.product__description {
+    margin: 40px 0 0 10px
+}
+
+.description__main {
+    color: rgba(72, 72, 72, 0.80);
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 30px 0;
+    max-width: 696px;
+}
+
+.description__characteristic {
+    color: rgba(72, 72, 72, 0.60);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.description__characteristic:not(:last-child) {
+    margin: 0 0 15px 0;
+}
+
+.characteristic-dark {
+    color: #484848;
+}
+
+.product__buy {
+    margin: 50px 0 0 0;
+}
+
+.buy__annotation {
+    color: rgba(72, 72, 72, 0.60);
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 21px 0;
+}
+
+.buy__block {
+    display: flex;
+}
+
+.buy__count {
+    margin: 0 30px 0 0;
+    display: flex;
+    width: 180px;
+    height: 66px;
+    border-radius: 15px;
+    background: #484848;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFF;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 136.4%;
+    padding: 0 20px 0 24px;
+    position: relative;
+}
+
+.count {
+    margin: 0 0 0 4px;
+}
+
+.count-minus {
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.count-minus:hover,
+.count-plus:hover {
+    opacity: 50%;
+    transition: all 0.3s ease;
+}
+
+.count-plus {
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.count::after {
+    content: '';
+    width: 2px;
+    height: 66px;
+    background-color: #FFF;
+    position: absolute;
+    top: 0;
+    right: 60px;
+}
+
+.count::before {
+    content: '';
+    width: 2px;
+    height: 66px;
+    background-color: #FFF;
+    position: absolute;
+    top: 0;
+    left: 60px;
+}
+
+.buy__btn {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    height: 66px;
+    border-radius: 15px;
+    border: 3px solid rgba(72, 72, 72, 0.80);
+    color: rgba(72, 72, 72, 0.80);
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+}
+
+.buy__btn:hover {
+    background: rgba(72, 72, 72, 0.80);
+    color: rgba(255, 255, 255, 0.80);
+    border: none;
+    transition: all 0.3s ease;
+}
