@@ -12,6 +12,14 @@ $(document).ready(function () {
         $('.goods__sort__block').toggleClass('active');
     });
 
+    $('.cart__link__block').click(function (event) {
+        $('.cart__block').toggleClass('active');
+    });
+
+    $('.cart-header__close').click(function (event) {
+        $('.cart__block').removeClass('active');
+    });
+
     $('.goods__sort__radio').click(function (event) {
 
         $('.goods__sort__radio').each(function () {
