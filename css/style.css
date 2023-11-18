@@ -1006,25 +1006,15 @@ body {
     }
 
     .projects__slider .slick-arrow.slick-prev:hover {
-        width: 41px !important;
-        height: 41px !important;
+        width: 41px;
+        height: 41px;
         background: url(../img/arrow-prev-m-hov.svg) center no-repeat;
     }
 
     .projects__slider .slick-arrow.slick-next:hover {
-        width: 41px !important;
-        height: 41px !important;
+        width: 41px;
+        height: 41px;
         background: url(../img/arrow-next-m-hov.svg) center no-repeat;
-    }
-
-    .projects__slider .slick-arrow.slick-prev:hover {
-        width: 22px !important;
-        height: 39px !important;
-    }
-
-    .projects__slider .slick-arrow.slick-next:hover {
-        width: 22px !important;
-        height: 39px !important;
     }
 }
 
