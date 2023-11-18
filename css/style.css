@@ -802,6 +802,8 @@ body {
 }
 
 
+
+
 @media (max-width: 1708px) {
     .projects__img:not(:last-child) {
         margin: 0 20px 20px 0;
@@ -1001,6 +1003,28 @@ body {
         width: 41px;
         height: 41px;
         background: url(../img/arrow-next-m.svg) center no-repeat;
+    }
+
+    .projects__slider .slick-arrow.slick-prev:hover {
+        width: 41px !important;
+        height: 41px !important;
+        background: url(../img/arrow-prev-m-hov.svg) center no-repeat;
+    }
+
+    .projects__slider .slick-arrow.slick-next:hover {
+        width: 41px !important;
+        height: 41px !important;
+        background: url(../img/arrow-next-m-hov.svg) center no-repeat;
+    }
+
+    .projects__slider .slick-arrow.slick-prev:hover {
+        width: 22px !important;
+        height: 39px !important;
+    }
+
+    .projects__slider .slick-arrow.slick-next:hover {
+        width: 22px !important;
+        height: 39px !important;
     }
 }
 
