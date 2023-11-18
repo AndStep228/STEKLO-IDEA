@@ -20,6 +20,15 @@ $(document).ready(function () {
         $('.cart__block').removeClass('active');
     });
 
+    $('.projects__img').click(function (event) {
+        let whatIs = $(this).data('id')
+        $('.projects__image-show.' + whatIs + '').toggleClass('active');
+    });
+
+    $('.image-show__close').click(function (event) {
+        $('.projects__image-show').removeClass('active');
+    });
+
     $('.goods__sort__radio').click(function (event) {
 
         $('.goods__sort__radio').each(function () {
@@ -86,12 +95,6 @@ $(document).ready(function () {
         arrows: false,
         fade: true,
         adaptiveHeight: true,
-        responsive: [{
-            breakpoint: 510,
-            settings: {
-                fade: false
-            }
-        }]
     });
     $('.mirror__nav').slick({
         arrows: true,
@@ -106,6 +109,34 @@ $(document).ready(function () {
                 arrows: false,
                 centerMode: true,
             }
+        }]
+    });
+
+    $('.projects__slider').slick({
+        fade: true,
+        draggable: false,
+        swipe: false
+    });
+
+    $('.image-show__slider').slick({
+        slidesToShow: 1,
+        variableWidth: true,
+        infinite: false,
+    });
+
+    $('.projects-slide__images').slick({
+        draggable: true,
+        swipe: true,
+        slidesToShow: 1,
+        arrows: true,
+        variableWidth: true,
+        centerMode: true,
+        infinite: false,
+
+        mobileFirst: true,
+        responsive: [{
+            breakpoint: 1200,
+            settings: 'unslick'
         }]
     });
 });
