@@ -1,4 +1,7 @@
+
+
 $(document).ready(function () {
+
     $('.header__burger').click(function (event) {
         $('.header__burger, .header__burger__block').toggleClass('main__active');
     });
@@ -27,6 +30,11 @@ $(document).ready(function () {
 
     $('.image-show__close').click(function (event) {
         $('.projects__image-show').removeClass('active');
+    });
+
+    $('.question').click(function (event) {
+        $(this).find('.question__txt').toggleClass('active').slideToggle(300, 'linear');
+        $(this).find('.question__arrow').toggleClass('active');
     });
 
     $('.goods__sort__radio').click(function (event) {
@@ -99,7 +107,7 @@ $(document).ready(function () {
     $('.mirror__nav').slick({
         arrows: true,
         asNavFor: '.mirror-show',
-        centerMode: false,
+        centerMode: true,
         slidesToShow: 3,
         focusOnSelect: true,
         variableWidth: true,
@@ -140,9 +148,4 @@ $(document).ready(function () {
         }]
     });
 });
-
-
-
-
-
 

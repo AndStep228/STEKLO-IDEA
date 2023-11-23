@@ -47,7 +47,7 @@ body {
     background: #fff;
     color: #484848;
     scroll-behavior: smooth;
-    overflow-x: hidden;
+
 }
 
 
@@ -57,6 +57,7 @@ body {
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .container {
@@ -801,7 +802,94 @@ body {
     background: url('../img/arrow-img-next.svg') 0 0 no-repeat !important;
 }
 
+/* ---------------------------------- */
 
+.question {
+    cursor: pointer;
+}
+
+.question:not(:last-child) {
+    padding: 0 0 50px 0;
+}
+
+.often-questions {
+    background: #484848;
+    width: 100%;
+    padding: 60px 0;
+}
+
+.often-questions__block {
+    width: 100%;
+    margin: 200px 0 0 0;
+}
+
+.questions__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.question__description {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 30px;
+}
+
+.line-question {
+    height: 3px;
+    background: rgba(255, 255, 255, 0.80);
+}
+
+.line-question-last {
+    margin: 50px 0 0 0;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.80);
+}
+
+.question__num {
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 110px 0 0;
+}
+
+.question__title {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 110px 0 0;
+}
+
+.question__arrow {
+    transition: all 0.3s ease;
+    margin: 0 10px 0 0;
+    width: 38px;
+    height: 21px;
+    background: url(../img/question__arrow.svg) center no-repeat;
+}
+
+.question__txt {
+    display: none;
+    max-width: 1435px;
+    color: rgba(255, 255, 255, 0.90);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 130.4%;
+    margin: 50px 0 0 187px;
+}
+
+
+.question__arrow.active {
+    transform: rotate(-90deg);
+    transition: all 0.3s ease;
+}
+
+.question-txt__bold {
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 130.4%;
+}
 
 
 @media (max-width: 1708px) {
@@ -850,6 +938,15 @@ body {
 }
 
 @media (max-width: 1200px) {
+
+    .question__num {
+        margin: 0 55px 0 0;
+    }
+
+    .question__txt {
+        margin: 50px 0 0 115px;
+    }
+
     .projects__img {
         width: 440px;
         height: 440px;
@@ -971,7 +1068,67 @@ body {
     }
 }
 
+@media (max-width: 890px) {
+    .question__title {
+        font-size: 30px;
+    }
+
+    .question__num {
+        font-size: 30px;
+    }
+
+    .question__txt {
+        font-size: 18px;
+    }
+
+    .question-txt__bold {
+        font-size: 18px;
+    }
+}
+
+
+@media (max-width: 730px) {
+    .question__description {
+        margin: 0;
+    }
+
+    .question__num {
+        margin: 0 10px 0 0;
+    }
+
+    .question__txt {
+        margin: 50px 0 0 0;
+    }
+
+}
+
+@media (max-width: 656px) {
+    .question__title {
+        font-size: 24px;
+    }
+
+    .often-questions__block {
+        margin: 100px 0 0 0;
+    }
+
+    .question__num {
+        font-size: 24px;
+    }
+
+    .question__txt {
+        font-size: 16px;
+    }
+
+    .question-txt__bold {
+        font-size: 16px;
+    }
+}
+
 @media (max-width: 580px) {
+    .question__title {
+        margin: 0;
+    }
+
     .projects-slide__title {
         font-size: 26px;
         padding: 0 50px;
@@ -1043,12 +1200,50 @@ body {
 }
 
 @media (max-width: 514px) {
+    .question__txt {
+        margin: 25px 0 0 0;
+    }
+
+    .question:not(:last-child) {
+        padding: 0 0 25px 0;
+    }
+
+    .line-question {
+        margin: 0 0 25px 0;
+    }
+
+    .line-question-last {
+        margin: 25px 0 0 0;
+    }
+
     .projects-slide__title {
         font-size: 20px;
     }
 
     .projects-slide__subtitle {
         font-size: 14px;
+    }
+
+    .question__num {
+        font-size: 16px;
+    }
+
+    .question__title {
+        font-size: 16px;
+    }
+
+    .question__txt {
+        font-size: 12px;
+    }
+
+    .question-txt__bold {
+        font-size: 12px;
+    }
+
+    .question__arrow {
+        width: 18px;
+        height: 10px;
+        background: url(../img/question__arrow-m.svg) center no-repeat;
     }
 }
 
