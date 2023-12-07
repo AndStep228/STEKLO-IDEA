@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
 
     $('.header__burger').click(function (event) {
@@ -62,12 +60,91 @@ $(document).ready(function () {
     });
 
 
+    $(function () {
+        if ($(window).width() > 950) {
+            scrollActive = true;
+            scrollDirection = 0;
+
+            $muchElements = $('.img__wrapper').length;
+
+
+            $nav = $('.parallax__block');
+            $scrollBlock = $('.horizontal-scroll__wrapper');
+            $fixedWidth = $nav.outerWidth();
+
+            $scrollTotalWidth = $('.img__wrapper').width() * ($muchElements - 1) + 260 + 240;
+
+
+
+            $window = $(window);
+            $h = $nav.offset().top;
+
+            $windowBottom = $window.height();
+
+            var lastScrollTop = 0;
+            $(window).scroll(function (event) {
+                var st = $(this).scrollTop();
+                if (st > lastScrollTop) {
+
+                    scrollDirection = 0;
+                } else {
+                    scrollDirection = 1;
+                }
+                lastScrollTop = st;
+            });
+
+            $window.scroll(function () {
+                $scrollUp = $nav.offset().top;
+                $muchLeft = ($scrollTotalWidth - $window.width()) / $muchElements;
+                $muchPadding = $muchLeft + 100;
+                console.log($muchLeft)
+                $parallaxFixed = $('.parallax__fixed');
+                $parallaxFixed.css('padding-bottom', $muchPadding * $muchElements + 'px')
+
+                if (scrollDirection == 1 && $window.scrollTop() + $window.height() < $scrollUp + 200 + $nav.height()) {
+                    scrollActive = true
+                    $nav.css({
+                        transform: 'translateY(0px)'
+                    });
+                }
+                if (scrollActive) {
+                    var scrollMuch = $window.scrollTop() - $h;
+                    if ($nav.hasClass('fixed') == true) {
+                        $scrollBlock.css({
+                            transform: 'translateX(-' + scrollMuch + 'px)'
+                        });
+                    }
+                    if ($window.scrollTop() > $h) {
+                        $nav.addClass('fixed');
+                    }
+                    else {
+                        $nav.removeClass('fixed');
+                        $scrollBlock.css({
+                            transform: 'translateX(0px)'
+                        });
+                    }
+
+                    $muchScrollBottom = $muchPadding * $muchElements - 1000
+
+                    if (scrollMuch > $muchLeft * $muchElements && scrollDirection == 0) {
+                        $nav.removeClass('fixed');
+                        $nav.css({
+                            transform: 'translateY(' + $muchScrollBottom + 'px)'
+                        });
+                        scrollActive = false;
+                    }
+                }
+            });
+        }
+    });
+
     var count = 1;
 
     $('.count-plus').click(function (event) {
         count += 1;
         $('.count').text(count)
     });
+
 
     $('.count-minus').click(function (event) {
         if ($('.count').text() == '1')
@@ -124,6 +201,16 @@ $(document).ready(function () {
         fade: true,
         draggable: false,
         swipe: false
+    });
+
+    $('.parallax__slick').slick({
+        fade: false,
+        draggable: true,
+        swipe: true,
+        arrows: false,
+        infinite: false,
+        variableWidth: true,
+        slidesToShow: 2
     });
 
     $('.image-show__slider').slick({
