@@ -53,7 +53,7 @@ $(document).ready(function () {
 
     });
 
-    $("body").on("scroll", function () {
+    $(window).on("scroll", function () {
         setTimeout(function () {
             $('.header__burger, .header__burger__block').removeClass('main__active');
         }, 500);
@@ -137,6 +137,9 @@ $(document).ready(function () {
             });
         }
         else {
+            const scrollContainer = new IScroll('.horizontal-scroll__wrapper', {
+                momentum: true // включаем инерцию
+            });
             var startX = 0; // начальная позиция touchmove по оси X
             var translateX = 0; // текущее смещение блока
             $window = $(window);
@@ -151,13 +154,13 @@ $(document).ready(function () {
             block.on('touchmove', function (event) {
                 var touch = event.originalEvent.touches[0];
                 var moveX = touch.pageX;
-
+                console.log(touch)
                 if (startX > moveX && translateX > ($muchLeft * $muchElements) * -1) {
                     // если пользователь двигался влево
-                    translateX -= startX - moveX;
+                    translateX -= startX - moveX + 3;
                 } else if (startX < moveX) {
                     // если пользователь двигался вправо
-                    translateX += moveX - startX;
+                    translateX += moveX - startX + 3;
                 }
 
                 console.log(($muchLeft * $muchElements) * -1)
