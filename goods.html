@@ -39,7 +39,7 @@
             <div class="cart__block">
                 <div class="cart__header">
                     <p class="cart-header__title">Корзина</p>
-                    <div class="cart-header__close"></div>
+                    <div class="cart-header__close cart-close"></div>
                 </div>
                 <div class="cart__main">
                     <div class="cart__items">
@@ -49,6 +49,7 @@
                                 <div class="cart-item__title">Настенное зеркало с подсветкой</div>
                                 <div class="cart-item__close"></div>
                             </div>
+                            <div class="cart-item__title mobile">Настенное зеркало с подсветкой</div>
                             <div class="cart-item__line"></div>
                             <div class="cart-item__buy">
                                 <p class="cart-item__cost">5 555 ₽</p>
@@ -93,13 +94,19 @@
                         </div>
                     </div>
                     <div class="cart__order">
-                        <p class="order__title">Оформить заказ</p>
+                        <div class="order__header">
+                            <p class="order__title">Оформить заказ</p>
+                            <div class="cart-header__close order-close"></div>
+                        </div>
                         <div class="order__form">
                             <input class="order-form__input" type="text" placeholder="Имя" nsame="" id="">
                             <input class="order-form__input" type="text" placeholder="Номер телефона" name="" id="">
                             <input class="order-form__input" type="text" placeholder="Город" name="" id="">
                         </div>
                         <div class="order__btn">Оставить заявку</div>
+                    </div>
+                    <div class="cart__order-m">
+                        <div class="order-m__btn">Оформить заказ</div>
                     </div>
                 </div>
             </div>
@@ -353,10 +360,37 @@
                             </div>
                         </div>
                     </div>
+
+                </div>
+                <div class="pagination">
+                    <div class="pagination__arrows prev first">
+                        <img src="img/arrow__close.svg" alt="">
+                        <img src="img/arrow__close.svg" alt="">
+                    </div>
+                    <div class="pagination__arrows prev">
+                        <img src="img/arrow__close.svg" alt="">
+
+                    </div>
+                    <div class="pagination__item active">
+                        <p class="page-count">1</p>
+                    </div>
+                    <div class="pagination__item">
+                        <p class="page-count">2</p>
+                    </div>
+                    <div class="pagination__item">
+                        <p class="page-count">3</p>
+                    </div>
+                    <div class="pagination__arrows next">
+                        <img src="img/arrow__close.svg" alt="">
+                    </div>
+                    <div class="pagination__arrows next first">
+                        <img src="img/arrow__close.svg" alt="">
+                        <img src="img/arrow__close.svg" alt="">
+                    </div>
                 </div>
             </div>
         </main>
-        <footer class="footer">
+        <footer class="footer footer-goods">
             <div class="container">
                 <div class="footer__block">
                     <hr class="line line-white">
