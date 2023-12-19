@@ -2541,7 +2541,7 @@ body.active-cart {
     margin-right: auto;
     z-index: 100;
     width: 1272px;
-    height: 600px;
+    height: max-content;
     position: fixed;
     border-radius: 15px;
     background: #FFF;
@@ -2549,7 +2549,6 @@ body.active-cart {
 }
 
 .cart__block.active {
-    overflow-y: scroll;
     display: block;
     top: 50px;
     transition: all 0.3s ease;
@@ -2809,7 +2808,8 @@ body.active-cart {
 @media(max-width: 1280px) {
     .cart__block {
         width: 100%;
-
+        height: 600px;
+        overflow-y: scroll;
     }
 
     .cart-header__close.order-close {
