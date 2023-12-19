@@ -2541,7 +2541,7 @@ body.active-cart {
     margin-right: auto;
     z-index: 100;
     width: 1272px;
-    height: max-content;
+    height: 600px;
     position: fixed;
     border-radius: 15px;
     background: #FFF;
@@ -2551,7 +2551,7 @@ body.active-cart {
 .cart__block.active {
     overflow-y: scroll;
     display: block;
-    top: 100px;
+    top: 50px;
     transition: all 0.3s ease;
 }
 
