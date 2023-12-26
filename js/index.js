@@ -94,6 +94,7 @@ $(document).ready(function () {
 
     $('.projects__img').click(function (event) {
         let whatIs = $(this).data('id')
+        console.log($('.projects__image-show.' + whatIs + ''))
         $('.projects__image-show.' + whatIs + '').toggleClass('active');
     });
 
