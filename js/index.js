@@ -78,8 +78,6 @@ window.onload = function () {
 
         });
 
-
-
         $('.cart__link__block').click(function (event) {
             $('.cart__block').toggleClass('active');
             $('body').toggleClass('active-cart')
@@ -142,21 +140,27 @@ window.onload = function () {
         $headerNav = $('.popular-mirrors');
         $headerScrollUp = $headerNav.offset().top;
         $headerHeight = $('.header').outerHeight();
-        console.log($headerHeight)
 
         $window.scroll(function () {
             if ($window.scrollTop() + $headerNav.height() > $headerScrollUp + $headerNav.height()) {
                 $('.header__nav-block').addClass('fixed')
+                $('.up__btn').addClass('fixed')
                 $('.header').css({
                     height: '' + $headerHeight + 'px'
                 })
             }
             else {
                 $('.header__nav-block').removeClass('fixed')
+                $('.up__btn').removeClass('fixed')
                 $('.header').css({
                     height: 'max-content'
                 })
             }
+        });
+
+        $('.up__btn').click(function () {
+            $('html, body').animate({ scrollTop: 0 }, 300);
+            return false;
         });
 
         $parallaxTitle = $('.img-wrapper__title')
@@ -255,7 +259,6 @@ window.onload = function () {
 
                         if ($window.scrollTop() > $h) {
                             $nav.addClass('fixed');
-                            console.log('bag is here?')
                         }
                         else {
                             $nav.removeClass('fixed');

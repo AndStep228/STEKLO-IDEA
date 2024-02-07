@@ -253,6 +253,41 @@ body::-webkit-scrollbar-thumb {
 
 }
 
+.up__btn {
+    z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    right: 15px;
+    bottom: 50px;
+    opacity: 0;
+    border-radius: 50%;
+    height: 78px;
+    width: 78px;
+    background: #484848;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.up__arrow {
+    transition: all 0.3s ease;
+}
+
+.up__btn:hover {
+    background: #FFF;
+}
+
+.up__btn:hover .up__arrow {
+    fill: #484848;
+}
+
+.up__btn.fixed {
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
 .header__nav-block.fixed {
     position: fixed;
     background: #FFF;
