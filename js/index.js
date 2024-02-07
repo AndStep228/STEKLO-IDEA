@@ -134,8 +134,29 @@ window.onload = function () {
 
         $(window).on("scroll", function () {
             setTimeout(function () {
-                $('.header__burger, .header__burger__block').removeClass('main__active');
+                $('.header__burger, .header__burger__block, .header__nav').removeClass('main__active');
             }, 500);
+        });
+
+        $window = $(window);
+        $headerNav = $('.popular-mirrors');
+        $headerScrollUp = $headerNav.offset().top;
+        $headerHeight = $('.header').outerHeight();
+        console.log($headerHeight)
+
+        $window.scroll(function () {
+            if ($window.scrollTop() + $headerNav.height() > $headerScrollUp + $headerNav.height()) {
+                $('.header__nav-block').addClass('fixed')
+                $('.header').css({
+                    height: '' + $headerHeight + 'px'
+                })
+            }
+            else {
+                $('.header__nav-block').removeClass('fixed')
+                $('.header').css({
+                    height: 'max-content'
+                })
+            }
         });
 
         $parallaxTitle = $('.img-wrapper__title')
@@ -150,6 +171,18 @@ window.onload = function () {
         $('.img__wrapper').last().addClass('img__wrapper-last')
 
         $('.parallax__arrow').last().addClass('d-none')
+
+        var lastScrollTop = 0;
+        $(window).scroll(function (event) {
+            var st = $(this).scrollTop();
+            if (st > lastScrollTop) {
+
+                scrollDirection = 0;
+            } else {
+                scrollDirection = 1;
+            }
+            lastScrollTop = st;
+        });
 
         $(function () {
             if ($(window).width() > 514) {
@@ -181,18 +214,6 @@ window.onload = function () {
                 $window = $(window);
 
                 $windowBottom = $window.height();
-
-                var lastScrollTop = 0;
-                $(window).scroll(function (event) {
-                    var st = $(this).scrollTop();
-                    if (st > lastScrollTop) {
-
-                        scrollDirection = 0;
-                    } else {
-                        scrollDirection = 1;
-                    }
-                    lastScrollTop = st;
-                });
 
                 $window.scroll(function () {
                     if ($nav.hasClass('fixed') == false) {
