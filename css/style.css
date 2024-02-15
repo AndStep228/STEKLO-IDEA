@@ -27,6 +27,7 @@ button {
     border: none;
     padding: 0;
     margin: 0;
+    font-family: inherit;
 }
 
 *:focus {
@@ -118,6 +119,10 @@ body::-webkit-scrollbar-thumb {
 
 .main {
     flex: 1 1 auto;
+}
+
+.slick-arrow {
+    cursor: pointer;
 }
 
 .btn {
@@ -254,7 +259,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .up__btn {
-    z-index: 1000;
+    z-index: 998;
     cursor: pointer;
     display: flex;
     position: fixed;
@@ -381,7 +386,7 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     width: 40px;
     height: 21px;
-    z-index: 3;
+    z-index: 1000;
     transition: all 0.3s ease;
     cursor: pointer;
 }
@@ -459,6 +464,7 @@ body::-webkit-scrollbar-thumb {
     background: #FFF;
     box-shadow: -10px 0px 12.4px 3px rgba(0, 0, 0, 0.25);
     transition: all 0.3s ease-in-out;
+    z-index: 999;
 }
 
 .burger__nav__link:not(:last-child) {
@@ -766,10 +772,6 @@ body::-webkit-scrollbar-thumb {
     color: rgba(255, 255, 255, 0.80);
     border: 3px solid rgba(255, 255, 255, 0.80);
 
-}
-
-.show-btn-mobile {
-    display: none;
 }
 
 .mirror__nav {
@@ -1553,8 +1555,8 @@ body::-webkit-scrollbar-thumb {
 
     .show__btn {
         font-size: 16px;
-        width: 290px;
         height: 70px;
+        text-align: center;
     }
 }
 
@@ -1573,13 +1575,17 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1130px) {
     .show-img {
         width: 100%;
         height: 538px;
     }
 
-
+    .show-btn__link {
+        display: block;
+        width: max-content;
+        margin: 0 auto;
+    }
 
     .projects-slide__images {
         display: flex;
@@ -1609,16 +1615,6 @@ body::-webkit-scrollbar-thumb {
 
     .description__item {
         font-size: 24px;
-    }
-
-    .show-btn__link {
-        display: none;
-    }
-
-    .show-btn-mobile {
-        width: max-content;
-        display: block;
-        margin: 60px auto 0 auto;
     }
 
     .mirror__nav__item {
@@ -1918,7 +1914,6 @@ body::-webkit-scrollbar-thumb {
 
 @media (max-width: 704px) {
     .mirror__nav {
-        margin-top: 0;
         justify-content: center;
         width: 100%;
     }
@@ -1995,10 +1990,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (max-width: 446px) {
-    .show-btn-mobile {
-        margin: 20px auto 0 auto;
-    }
-
     .description__title {
         font-size: 18px;
     }
