@@ -689,8 +689,6 @@ body::-webkit-scrollbar-thumb {
     padding: 100px 0;
 }
 
-.popular-mirrors__block {}
-
 .title {
     text-transform: uppercase;
     font-size: 48px;
