@@ -1,14 +1,14 @@
-// $(function ($) {
-//     var windowWidth = $(window).width();
-//     var windowHeight = $(window).height();
+$(function ($) {
+    var windowWidth = $(window).width();
+    var windowHeight = $(window).height();
 
-//     $(window).resize(function () {
-//         if (windowWidth != $(window).width() || windowHeight != $(window).height()) {
-//             location.reload();
-//             return;
-//         }
-//     });
-// });
+    $(window).resize(function () {
+        if (windowWidth != $(window).width() || windowHeight != $(window).height()) {
+            location.reload();
+            return;
+        }
+    });
+});
 
 window.onload = function () {
     $('body').removeClass('preload__body')
