@@ -1,14 +1,15 @@
-$(function ($) {
-    var windowWidth = $(window).width();
-    var windowHeight = $(window).height();
+// $(function ($) {
+//     var windowWidth = $(window).width();
+//     var windowHeight = $(window).height();
 
-    $(window).resize(function () {
-        if (windowWidth != $(window).width() || windowHeight != $(window).height()) {
-            location.reload();
-            return;
-        }
-    });
-});
+//     $(window).resize(function () {
+//         if (windowWidth != $(window).width() || windowHeight != $(window).height()) {
+//             location.reload();
+//             return;
+//         }
+//     });
+// });
+
 window.onload = function () {
     $('body').removeClass('preload__body')
     $preloader = $('.preloader')
@@ -18,6 +19,88 @@ window.onload = function () {
     }, 950)
 
     $(document).ready(function () {
+        $('.product__slide__block').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            asNavFor: '.product__subslide__block',
+            arrows: true,
+            fade: true,
+            adaptiveHeight: true,
+            focusOnSelected: true
+        });
+
+        $('.product__subslide__block').slick({
+            arrows: false,
+            draggable: false,
+            asNavFor: '.product__slide__block',
+            centerMode: false,
+            dots: false,
+            variableWidth: true,
+            focusOnSelect: true
+        });
+
+        $('.mirror-show').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            asNavFor: '.mirror__nav',
+            arrows: false,
+            fade: true,
+            adaptiveHeight: true
+        });
+        $('.mirror__nav').slick({
+            arrows: true,
+            asNavFor: '.mirror-show',
+            centerMode: true,
+            slidesToShow: 3,
+            focusOnSelect: true,
+            variableWidth: true,
+            responsive: [{
+                breakpoint: 510,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                }
+            }]
+        });
+
+        $('.projects__slider').slick({
+            fade: true,
+            draggable: false,
+            swipe: false
+        });
+
+        // $('.parallax__slick').slick({
+        //     fade: false,
+        //     draggable: true,
+        //     swipe: true,
+        //     arrows: false,
+        //     infinite: false,
+        //     variableWidth: true,
+        //     slidesToShow: 2
+        // });
+
+        $('.image-show__slider').slick({
+            slidesToShow: 1,
+            variableWidth: true,
+            infinite: false,
+        });
+
+        $('.projects-slide__images').slick({
+            draggable: true,
+            swipe: true,
+            slidesToShow: 1,
+            arrows: true,
+            variableWidth: true,
+            centerMode: true,
+            infinite: false,
+
+            mobileFirst: true,
+            responsive: [{
+                breakpoint: 1200,
+                settings: 'unslick'
+            }]
+        });
+
         $('.header__burger, .burger__nav__link').click(function (event) {
             $('.header__burger, .header__burger__block, .header__nav, body').toggleClass('main__active');
         });
@@ -162,6 +245,13 @@ window.onload = function () {
                     height: 'max-content'
                 })
             }
+
+            if (scrollDirection == 1) {
+                $('.header__nav-block').removeClass('fixed')
+                $('.header').css({
+                    height: 'max-content'
+                })
+            }
         });
 
         $('.up__btn').click(function () {
@@ -301,87 +391,7 @@ window.onload = function () {
             $('.count').text(count)
         });
 
-        $('.product__slide__block').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            asNavFor: '.product__subslide__block',
-            arrows: true,
-            fade: true,
-            adaptiveHeight: true,
-            focusOnSelected: true
-        });
-        $('.product__subslide__block').slick({
-            arrows: false,
-            draggable: false,
-            asNavFor: '.product__slide__block',
-            centerMode: false,
-            dots: false,
-            slidesToShow: 1,
-            variableWidth: true,
-            focusOnSelect: true
-        });
 
-        $('.mirror-show').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            asNavFor: '.mirror__nav',
-            arrows: false,
-            fade: true,
-            adaptiveHeight: true,
-        });
-        $('.mirror__nav').slick({
-            arrows: true,
-            asNavFor: '.mirror-show',
-            centerMode: true,
-            slidesToShow: 3,
-            focusOnSelect: true,
-            variableWidth: true,
-            responsive: [{
-                breakpoint: 510,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                }
-            }]
-        });
-
-        $('.projects__slider').slick({
-            fade: true,
-            draggable: false,
-            swipe: false
-        });
-
-        // $('.parallax__slick').slick({
-        //     fade: false,
-        //     draggable: true,
-        //     swipe: true,
-        //     arrows: false,
-        //     infinite: false,
-        //     variableWidth: true,
-        //     slidesToShow: 2
-        // });
-
-        $('.image-show__slider').slick({
-            slidesToShow: 1,
-            variableWidth: true,
-            infinite: false,
-        });
-
-        $('.projects-slide__images').slick({
-            draggable: true,
-            swipe: true,
-            slidesToShow: 1,
-            arrows: true,
-            variableWidth: true,
-            centerMode: true,
-            infinite: false,
-
-            mobileFirst: true,
-            responsive: [{
-                breakpoint: 1200,
-                settings: 'unslick'
-            }]
-        });
     });
 
 }
