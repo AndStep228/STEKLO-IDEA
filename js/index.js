@@ -36,7 +36,9 @@ window.onload = function () {
             centerMode: false,
             dots: false,
             variableWidth: true,
-            focusOnSelect: true
+            focusOnSelect: true,
+            slidesToShow: 4,
+            slidesToScroll: 4,
         });
 
         $('.mirror-show').slick({
@@ -204,6 +206,16 @@ window.onload = function () {
             $(this).find('.question__txt').toggleClass('active').slideToggle(300, 'linear');
             $(this).find('.question__arrow').toggleClass('active');
         });
+        $('.characteristic__choose').click(function (event) {
+            $(this).find('.choose__list').slideToggle(100, 'linear');
+        });
+
+        $('.choose__var').click(function (event) {
+            $chooseText = $(this).text()
+            $(this).parent().siblings('.choose__var-show').text($chooseText)
+        });
+
+
 
         $('.goods__sort__radio').click(function (event) {
 
